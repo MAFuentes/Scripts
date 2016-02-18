@@ -20,6 +20,6 @@ else
     emerge @module-rebuild    
 fi &&
 etc-update -c &&
-emerge -av --depclean &&
+emerge -v --depclean &&
 revdep-rebuild &&
 eclean -d distfiles
