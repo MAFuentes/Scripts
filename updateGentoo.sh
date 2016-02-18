@@ -1,6 +1,6 @@
 #!/bin/bash
-eix-sync &&
-emerge -avuDN --with-bdeps y --keep-going world &&
+eix-sync;
+emerge -vuDN --with-bdeps y --keep-going world &&
 gcc-config $(gcc-config -l | wc -l) &&
 perl-cleaner --all &&
 python-updater &&
@@ -19,7 +19,7 @@ else
     make modules_prepare
     emerge @module-rebuild    
 fi &&
-dispatch-conf &&
+etc-update -c &&
 emerge -av --depclean &&
 revdep-rebuild &&
 eclean -d distfiles

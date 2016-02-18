@@ -10,7 +10,7 @@ emerge x11-terms/rxvt-unicode
 emerge www-client/chromium www-client/firefox
 
 # Tools
-emerge app-arch/zip app-arch/unrar media-sound/alsa-utils app-portage/portage-utils app-portage/gentoolkit app-misc/screen app-portage/eix
+emerge app-arch/zip app-arch/unrar media-sound/alsa-utils app-portage/portage-utils app-portage/gentoolkit app-misc/screen app-portage/eix net-ftp/gftp app-portage/genlop
 
 # Java
 emerge dev-java/icedtea-bin
