@@ -22,6 +22,7 @@ cp -L /etc/resolv.conf /mnt/gentoo/etc/;
 cp /root/SecCop/make.conf /mnt/gentoo/etc/portage/
 cp /root/SecCop/package.use /mnt/gentoo/etc/portage/package.use/default
 cp /root/SecCop/gentooMountainInstallChroot.sh /mnt/gentoo/
+cp /root/SecCop/gentooPostInstall.sh /mnt/gentoo/
 # tar vxfpj /root/SecCop/root.tar.bz2 -C /mnt/gentoo/root/
 
 
@@ -31,6 +32,8 @@ chmod +x /mnt/gentoo/gentooMountainInstallChroot.sh
 chroot /mnt/gentoo ./gentooMountainInstallChroot.sh
 
 ## Finish ##
+rm /mnt/gentoo/gentooMountainInstallChroot.sh
+rm /mnt/gentoo/gentooPostInstall.sh
 exit;
 cd;
 umount -l /mnt/gentoo/dev{/shm,/pts,};

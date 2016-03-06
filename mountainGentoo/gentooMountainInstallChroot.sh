@@ -33,7 +33,11 @@ sed 's/set timeout=5/set timeout=0/' /boot/grub/grub.cfg > /boot/grub/grub.cfg.n
 mv /boot/grub/grub.cfg.new /boot/grub/grub.cfg
 
 ## Install Programs ##
-sh /root/Scripts/gentooPostInstall.sh
+sh /gentooPostInstall.sh
 
 ## Add User ##
 useradd -m -G users,wheel,audio,video,usb,cdrom -s /bin/bash sitron;
+
+## Delete Passwd ##
+passwd -d root
+passwd -d sitron
