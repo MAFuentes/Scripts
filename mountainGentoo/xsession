@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# Run urxvt daemon
+urxvtd -q -o -f
+# Set xserver parameters
+xrandr --output HDMI1 --primary --mode 1920x1080 --pos 1080x0 --rotate normal --output LVDS1 --off --output VIRTUAL1 --off --output DP1 --off --output VGA1 --mode 1920x1080 --pos 0x0 --rotate left
+xset -dpms
+xset s off
+# Launch fluxbox
+exec /usr/bin/startfluxbox

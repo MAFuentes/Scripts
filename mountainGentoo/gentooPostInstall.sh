@@ -48,14 +48,27 @@ emerge app-editors/emacs app-emacs/ess > /root/InstallLog/emerge-Emacs.log 2>&1;
 echo "  - Office";
 emerge app-office/libreoffice > /root/InstallLog/emerge-LibreOffice.log 2>&1;
 
+# PaintBrush
+echo "  - Paint";
+emerge media-gfx/pinta
+
 # Programing
 echo "  - Programing";
 emerge dev-vcs/git > /root/InstallLog/emerge-Git.log 2>&1;
 
 # Network
 echo "  - Network";
-emerge net-misc/wicd > /root/InstallLog/emerge-Network.log 2>&1;
-rc-update add wicd default;
+#emerge net-misc/wicd > /root/InstallLog/emerge-Network.log 2>&1;
+#rc-update add wicd default;
+rc-update add dhcpcd default;
+emerge wpa_supplicant
+rc-update add wpa_supplicant default;
+echo "ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=wheel" > /etc/wpa_supplicant/wpa_supplicant.conf;
+echo "update_config=1" >> /etc/wpa_supplicant/wpa_supplicant.conf;
+cp /usr/share/dhcpcd/hooks/10-wpa_supplicant /lib/dhcpcd/dhcpcd-hooks;
+echo "modules_wlan0=\"wpa_supplicant\"" > /etc/conf.d/net;
+echo "config_wlan0=\"dhcp\"" > /etc/conf.d/net;
+chmod 600 /etc/wpa_supplicant/wpa_supplicant.conf;
 
 # WM
 echo "  - WM";
@@ -70,7 +83,7 @@ echo "  - Login";
 emerge x11-misc/slim > /root/InstallLog/emerge-Login.log 2>&1;
 rc-update add xdm default;
 echo "DISPLAYMANAGER=\"slim\"" >> /etc/conf.d/xdm;
-echo "XSESSION=\"fluxbox\"" > /etc/env.d/90xsession 
+echo "XSESSION=\"custom\"" > /etc/env.d/90xsession 
 
 # Fluxbox
 echo "  - Fluxbox";
@@ -79,10 +92,6 @@ emerge x11-themes/commonbox-styles x11-themes/commonbox-styles-extra x11-themes/
 # DisplayManager
 echo "  - DisplayManager";
 emerge x11-misc/arandr > /root/InstallLog/emerge-DisplayManager.log 2>&1;
-
-# Disable Screensaver
-xset -dpms
-xset s off
 
 # SSD
 echo "  - SSD";

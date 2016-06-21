@@ -1,27 +1,28 @@
-# required by media-video/vlc-2.2.2::gentoo
-# required by media-video/vlc (argument)
->=sys-libs/zlib-1.2.8-r1 minizip
-# required by www-client/chromium-48.0.2564.82::gentoo
-# required by chromium (argument)
->=dev-libs/libxml2-2.9.3 icu
-# required by www-client/firefox-44.0::gentoo
-# required by firefox (argument)
->=dev-lang/python-2.7.11-r2:2.7 sqlite
-# required by net-p2p/deluge-1.3.12::gentoo
-# required by net-p2p/deluge (argument)
->=net-libs/rb_libtorrent-1.0.8 python
-# required by www-client/chromium-48.0.2564.82::gentoo
-# required by chromium (argument)
->=media-libs/harfbuzz-1.1.3 icu
-# required by net-libs/rb_libtorrent-1.0.8::gentoo[python]
-# required by net-p2p/deluge-1.3.12::gentoo
-# required by net-p2p/deluge (argument)
->=dev-libs/boost-1.58.0-r1 python
->=x11-terms/rxvt-unicode-1 256-color xft
+sys-libs/zlib minizip
+dev-libs/libxml2 icu
+dev-lang/python sqlite
+net-libs/rb_libtorrent python
+media-libs/harfbuzz icu
+media-video/libav vaapi
+dev-libs/libxml2 icu
+dev-libs/libpcre pcre16
+dev-libs/boost python
+x11-terms/rxvt-unicode-1 256-color xft
 x11-wm/fluxbox -gnome -kde truetype toolbar
 app-admin/conky truetype audacious -ipv6
 app-editors/emacs libxml2
 dev-java/icedtea-bin -webstart
->=net-analyzer/nmap-6.25 gtk ipv6 lua nls ssl ncat ndiff nmap-update nping
+net-analyzer/nmap gtk ipv6 lua nls ssl ncat ndiff nmap-update nping
 app-office/libreoffice PYTHON_SINGLE_TARGET: python3_4
 www-client/firefox PYTHON_SINGLE_TARGET: python3_4
+net-p2p/deluge PYTHON_SINGLE_TARGET: python2_7
+dev-lang/mono minimal
+media-video/ffmpeg amr amrenc bluray bs2b bzip2 cdio celt cpudetection dcadec encode faac fdk flite frei0r fribidi gcrypt gme gmp gnutls gpl gsm hardcoded-tables iconv iec61883 ieee1394 jack kvazaar ladspa libass libilbc librtmp libsoxr libv4l lzma mipsdspr1 mipsdspr2 mipsfpu mmal modplug mp3 network nvenc openal opengl openh264 openssl opus pic postproc pulseaudio rubberband schroedinger sdl snappy speex ssh static-libs theora threads truetype twolame v4l vaapi vdpau vorbis vpx wavpack webp x264 x265 xcb xvid zimg zlib zvbi
+media-libs/opencv  ABI_X86: 64 PYTHON_TARGETS: python3_4
+media-plugins/alsa-plugins pulseaudio
+media-video/vlc X audioqueue avcodec avformat bluray chromecast dc1394 directx dvbpsi dxva2 faad fdk fluidsynth gcrypt gme gstreamer kate libtar libtiger linsys live lua matroska media-library mpeg omxil opencv optimisememory opus postproc projectm rdp rtsp run-as-root schroedinger sdl-image sftp shout sid skins swscale tremor twolame upnp vlm vpx wma-fixed x265 xcb zeroconf zvbi a52 aalib alsa altivec bidi cddb dbus directfb dts dvb dvd encode ffmpeg flac fontconfig gnutls ieee1394 jack jpeg libass libcaca libnotify libsamplerate lirc modplug mp3 mtp musepack ncurses neon ogg opengl png pulseaudio samba sdl speex svg taglib theora truetype udev v4l vaapi vcd vdpau vnc vorbis x264 xml xv
+app-text/asciidoc PYTHON_SINGLE_TARGET: python2_7 pypy PYTHON_TARGET: python2_7 pypy
+sys-apps/lm_sensors sensord static-libs
+app-admin/conky X truetype audacious -ipv6
+net-wireless/wpa_supplicant qt5 
+net-wireless/lorcon python
